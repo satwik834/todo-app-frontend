@@ -1,11 +1,11 @@
-import Todo_input from "./TodoInput";
 
+import TodoBox from "./TodoBox";
 
 
 
 function App(){
     return(
-      <Todo_input/>
+      <TodoBox/>
     );
 }
 

@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
-function Todo_input(){
+function TodoInput(){
     const [todo,setTodo] = useState();
     const [priority,setPriority] = useState();
 
@@ -44,4 +44,4 @@ function Todo_input(){
 
 }
 
-export default Todo_input;
+export default TodoInput;
