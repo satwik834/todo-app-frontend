@@ -38,7 +38,7 @@ body{
 }
 .todo-box{
   margin: 200px;
-  height: 500px;
+  height: auto;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -108,4 +108,11 @@ body{
 .todo .check-icon.visible {
   opacity: 1;
   transform: scale(1);
+}
+.delete-btn:hover{
+  transform: scale(1.1);
+}
+.task-list {
+    list-style-type: none; /* Removes the bullet points */
+    padding-left: 0; /* Optional: removes default padding */
 }

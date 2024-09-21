@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
 
-function TodoInput(){
+function TodoInput({ addTask }){
     const [todo,setTodo] = useState();
     const [priority,setPriority] = useState();
 
@@ -13,9 +13,17 @@ function TodoInput(){
     function handlePriorityChange(e){
         setPriority(e.target.value);
     }
-    function addTodo(){
-        priority;
-        //add the todo along with the priority to the database
+    function handleAddTodo(){
+        if(todo){
+            addTask(todo,priority);
+            setTodo('');
+            setPriority('');
+        }
+    }
+    function handleKeyPress(e){
+        if(e.key === 'Enter'){
+            handleAddTodo();
+        }
     }
     return (
         <>
@@ -25,14 +33,15 @@ function TodoInput(){
                     placeholder='Task'
                     onChange={handleTextChange}
                     value={todo}
+                    onKeyPress={handleKeyPress}
                 />
-                <Form.Select className='priority-select' onChange={handlePriorityChange}>
-                    <option>Priority</option>
+                <Form.Select  className='priority-select' onChange={handlePriorityChange}>
+                    <option disabled>Priority</option>
                     <option value={1}>High</option>
                     <option value={2}>Medium</option>
                     <option value={3}>Low</option>
                 </Form.Select>
-                <Button className='btn' variant='dark' onClick={addTodo}>
+                <Button className='btn' variant='dark' onClick={handleAddTodo}>
                     Add
                 </Button>
             

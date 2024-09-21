@@ -3,7 +3,8 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes } from "@fortawesome/free-solid-svg-icons";
 
-function Task() {
+
+function Task({ deleteTask,text }) {
     const [checked, setChecked] = useState(false);
     const [hover, setHover] = useState(false);
     const [wasChecked, setWasChecked] = useState(false);
@@ -29,9 +30,11 @@ function Task() {
             <Button onMouseLeave={notHovering} onMouseEnter={Hovering} onClick={handleChecked} variant="dark" className="btn done-btn">
             <FontAwesomeIcon icon={faCheck} className={`check-icon ${showCheck ? 'visible' : ''}`} />
             </Button>
-            <p>Sample Task</p>
-            <Button variant="dark" className="btn delete-btn">
-                <FontAwesomeIcon icon={faTimes} />
+            <p>{text}</p>
+            <Button variant="dark" 
+                className="btn delete-btn"
+                onClick={() => deleteTask(text)}>
+                <FontAwesomeIcon className = "cross-icon" icon={faTimes} />
             </Button>
         </div>
     );
