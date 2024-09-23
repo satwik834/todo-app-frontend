@@ -30,7 +30,7 @@ function TodoInput({ addTask }){
             <InputGroup className='todo-input'>
                 <Form.Control 
                     className='text-input'
-                    placeholder='Task'
+                    placeholder='Add Task'
                     onChange={handleTextChange}
                     value={todo}
                     onKeyPress={handleKeyPress}

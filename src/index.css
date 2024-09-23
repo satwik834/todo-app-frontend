@@ -44,6 +44,7 @@ body{
   flex-direction: column;
   background-color: #afafaf;
   border-radius: 25px;
+  margin-left: 500px;
 }
 .todo-box h1{
   margin: 15px;
@@ -116,3 +117,20 @@ body{
     list-style-type: none; /* Removes the bullet points */
     padding-left: 0; /* Optional: removes default padding */
 }
+
+.nav-bar{
+  width: 90%;
+  margin-left: 5%;
+  height: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.nav-bar-brand{
+  font-weight: 300;
+  font-size: 1.9rem;
+  margin-left: 20px;
+}
+
